@@ -1,4 +1,5 @@
 import React from 'react';
+import { List, Button } from 'antd';
 
 const User = (props) => {
   const selectUser = (event, user) => {
@@ -12,12 +13,11 @@ const User = (props) => {
   } 
 
   return (
-    <div>
-      <div>{props.user.name}</div>
-      <div>{props.user.bio}</div>
-      <button onClick={(event) => selectUser(event, props.user)}>Edit</button>
-      <button onClick={(event) => deleteUser(event, props.user.id)}>Delete</button>
-    </div>
+    <List.Item>
+      <List.Item.Meta title={props.user.name} description={props.user.bio}/>
+      <Button icon='edit' onClick={(event) => selectUser(event, props.user)}>Edit</Button>
+      <Button icon='delete' onClick={(event) => deleteUser(event, props.user.id)}>Delete</Button>
+    </List.Item>
   )
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Form, Icon, Input, Button } from 'antd';
 
 const UserForm = (props) => {
   const [input, setInput] = useState({
@@ -48,12 +49,12 @@ const UserForm = (props) => {
 
   return (
     <div>
-      <form onSubmit={submitHandler}>
-        <input name='name' value={input.name} onChange={inputHandler} />
-        <input name='bio' value={input.bio} onChange={inputHandler} />
+      <Form className='user-form' onSubmit={submitHandler}>
+        <Input prefix={<Icon type='user'/>} name='name' value={input.name} placeholder='Name' onChange={inputHandler} />
+        <Input prefix={<Icon type='solution' />} name='bio' value={input.bio} placeholder='Bio' onChange={inputHandler} />
         {error && <div>{error}</div>}
-        <button>Submit</button>
-      </form>
+        <Button onClick={submitHandler}>Submit</Button>
+      </Form>
     </div>
   )
 }

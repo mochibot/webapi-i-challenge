@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import UserList from './components/UserList';
 import UserForm from './components/UserForm';
+import 'antd/dist/antd.css';
 import './App.css';
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
   const [activeUser, setActiveUser] = useState(null);
 
   let baseUrl = 'http://localhost:8000';
-  
+
   useEffect(() => {
     axios.get(baseUrl + '/users')
       .then(response => {
@@ -86,8 +87,10 @@ const App = () => {
       <header className="App-header">
         <div>User app</div>
       </header>
-      <UserForm addUser={addUser} activeUser={activeUser} editUser={editUser}/>
-      <UserList users={users} deleteUser={deleteUser} selectUser={selectUser}/>
+      <div className='App-content'>
+        <UserForm addUser={addUser} activeUser={activeUser} editUser={editUser}/>
+        <UserList users={users} deleteUser={deleteUser} selectUser={selectUser}/>
+      </div>
     </div>
   );
 }
