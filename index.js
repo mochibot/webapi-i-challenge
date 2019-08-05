@@ -1,9 +1,11 @@
 // implement your API here
 const express = require('express');
+const cors = require('cors');
 const Hubs = require('./data/db');
 
 const server = express();
-server.use(express.json()); //Note-to-self: dont forget to invoke .json()
+server.use(express.json());  //Note-to-self: dont forget to invoke .json()
+server.use(cors());  //enabling cors middleware
 
 server.get('/', (req, res) => {
   res.send('hello web 20.75');  //send back a string, can also send back html elements
