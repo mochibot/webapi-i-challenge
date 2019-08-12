@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f9f4f4;
+}
+
+.App-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #dec3c3;
+  display: flex;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 8px;
+  z-index: 5;
+}
+
+.App-content {
+  padding-top: 50px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e7d3d3;
+  margin: 20px auto;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.ant-input {
+  margin: 5px auto;
+}
+
+.user-form button {
+  margin-top: 10px;
+}
+
+.user-list {
+  background: #ffffff;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.ant-btn {
+  background: #f9f4f4; 
+  border-color: #f9f4f4; 
+  margin: 0 5px;
+}
+
+.ant-btn:hover {
+  border-color: #dec3c3; 
+  color: #dec3c3;
+}
